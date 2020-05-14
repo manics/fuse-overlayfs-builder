@@ -1,4 +1,5 @@
 # Fuse-overlayfs Builder
+[![Build Status](https://travis-ci.com/manics/fuse-overlayfs-builder.svg?branch=master)](https://travis-ci.com/manics/fuse-overlayfs-builder)
 
 Static builds of [fuse-overlayfs](https://github.com/containers/fuse-overlayfs/) for:
 - Ubuntu 18.04
