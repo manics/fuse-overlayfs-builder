@@ -1,0 +1,17 @@
+---
+language: minimal
+services:
+  - docker
+
+script:
+  - docker build -t fuse-overlayfs -f ./Dockerfile.static.ubuntu .
+  - docker run -it --rm -v $PWD/dist:/dist fuse-overlayfs cp fuse-overlayfs/fuse-overlayfs /dist/fuse-overlayfs.ubuntu
+
+deploy:
+  - provider: releases
+    api_key: $GITHUB_OAUTH_TOKEN
+    file_glob: true
+    file: dist/*
+    skip_cleanup: true
+    on:
+      tags: true
