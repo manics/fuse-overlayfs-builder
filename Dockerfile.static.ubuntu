@@ -1,4 +1,4 @@
-# https://github.com/containers/fuse-overlayfs/blob/v1.0.0/Dockerfile.static.ubuntu
+# https://github.com/containers/fuse-overlayfs/blob/v1.1.2/Dockerfile.static.ubuntu
 FROM docker.io/ubuntu:rolling
 WORKDIR /build
 RUN apt-get update && \
@@ -7,7 +7,7 @@ RUN apt-get update && \
 
 RUN apt-get update && \
     apt-get install --no-install-recommends -y ca-certificates git && \
-    git clone -b v1.0.0 --depth 1 https://github.com/containers/fuse-overlayfs
+    git clone -b v1.1.2 --depth 1 https://github.com/containers/fuse-overlayfs
 
 RUN cd fuse-overlayfs && \
     sh autogen.sh && \

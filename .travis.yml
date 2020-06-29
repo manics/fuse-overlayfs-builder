@@ -6,6 +6,7 @@ services:
 script:
   - docker build -t fuse-overlayfs -f ./Dockerfile.static.ubuntu .
   - docker run -it --rm -v $PWD/dist:/dist fuse-overlayfs cp fuse-overlayfs/fuse-overlayfs /dist/fuse-overlayfs.ubuntu
+  - dist/fuse-overlayfs.ubuntu --version
 
 deploy:
   - provider: releases
